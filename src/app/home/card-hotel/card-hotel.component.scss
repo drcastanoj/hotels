@@ -1,0 +1,55 @@
+@import "~assets/styles/variables.scss";
+@import "~assets/styles/mixins.scss";
+.card-hotel {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: $white;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 2px 2px 2px $gray-shadow;
+    img {
+        height: 250px;
+    }
+    .description {
+        border-bottom: 1px dashed $grey;
+        padding: 20px 0;
+        h3 {
+            color: $blue-title;
+        }
+        .calification {
+            color: $yellow-start;
+            font-size: 25px;
+        }
+        .services {
+            color: $grey;
+            font-size: 35px
+        }
+    }
+    .price {
+      margin: 20px 0 40px;
+        @include flexColumnCentered;
+        .note {
+          color: $grey;
+          font-weight: 400;
+        }
+        .value{
+          display: flex;
+          align-items: center;
+          color: $orange-price;
+          >:first-child{
+            font-weight: 600;
+            font-size: 25px;
+            margin: 0 5px;
+          }
+          >:last-child{
+            font-weight: 800;
+            font-size: 40px;
+          }
+        }
+        button{
+          width: 100%;
+          @include blueButton;
+        }
+    }
+}
