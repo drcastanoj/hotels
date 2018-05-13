@@ -1,3 +1,5 @@
-node_modules
-public
-reporters
+server/node_modules
+server/public
+server/dist
+app/public
+app/reporters
