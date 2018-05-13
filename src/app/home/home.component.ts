@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelService } from './shared/hotel.service';
+import { IHotel } from './shared/hotel.model';
+import { IFilterHotel } from './filter-user/filter-starts.model';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
 
-  public ngOnInit(): void { }
+  public hotels: IHotel[];
+
+  constructor(private hotelService: HotelService) { }
+
+
+  public ngOnInit(): void {
+    this.loadHotels();
+  }
+
+  public loadHotels(filter?: IFilterHotel): void {
+    this.hotelService.getHotel(filter).subscribe((result) => {
+      this.hotels = result;
+    });
+  }
 }

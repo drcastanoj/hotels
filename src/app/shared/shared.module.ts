@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HeaderComponent } from './header/header.component';
+import { PointReplacerPipe } from './pipes/point-relacer.pipe';
 
 
 @NgModule({
@@ -8,10 +8,10 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule
   ],
   declarations: [
-    HeaderComponent
+    PointReplacerPipe
   ],
   exports: [
-    HeaderComponent
+    PointReplacerPipe
   ]
 })
-export class CoreModule { }
+export class SharedModule { }

@@ -14,21 +14,24 @@
 .filter-name,
 .filter-stars {
     background: $white;
-    padding: 15px;
+    padding: 10px 20px;
     margin-bottom: 10px;
     >:first-child {
         @include flexCenteredSpaceAround;
-        height: 40px;
+        
         color: $blue-title;
         .icon-search {
             width: 10%;
+            @media (min-width: $md) {
+                width: 15%;
+            }
         }
         .title-name {
             width: 85%;
             font-weight: 700;
         }
     }
-    >:last-child {
+    .name{
         @include flexCenteredSpaceBetween;
         input {
             width: 65%;
@@ -41,7 +44,7 @@
 }
 
 .filter-stars {
-    >:last-child {
+    .stars {
         @include flexColumnStart;
     }
     .custom-checkbox {
