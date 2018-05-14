@@ -3,3 +3,4 @@ server/public
 server/dist
 app/public
 app/reporters
+yarn-error.log

@@ -9,11 +9,14 @@
   "scripts": {
     "preinstall": "cd server && yarn && cd ../app &&  yarn",
     "start": "cd server && yarn start",
-    "start-app" : "cd app && yarn start" ,
+    "start-app": "cd app && yarn start",
     "build": "yarn build-app && yarn build-server",
-    "build-app" : "cd app && yarn build" ,
-    "build-server" : "cd server && yarn build",
+    "build-app": "cd app && yarn build",
+    "build-server": "cd server && yarn build",
     "server-node": "yarn build-app && yarn start-server-node",
-    "start-server-node": "cd server && yarn serve" 
+    "start-server-node": "cd server && yarn serve"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5"
   }
 }

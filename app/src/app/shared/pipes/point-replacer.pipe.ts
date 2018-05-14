@@ -1,10 +1,9 @@
 import { Pipe } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
 
 @Pipe({
   name: 'pointReplacer'
 })
-export class PointReplacerPipe extends DecimalPipe {
+export class PointReplacerPipe  {
 
   public transform(value: string): string {
     if (value) {

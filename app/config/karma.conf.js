@@ -7,10 +7,10 @@ module.exports = function (config) {
       {
         test: /\.ts$/,
         enforce: 'post',
-        exclude: [/\Test\.ts$/, /node_modules/],
-        loader: 'istanbul-instrumenter-loader'
+        exclude: [/\.spec\.ts$/, /node_modules/],
+         use: { loader: 'istanbul-instrumenter-loader', options: { esModules: true } }
       });
-    reporters = ['kjhtml', 'progress', 'junit', 'coverage'];
+    reporters = ['kjhtml', 'html'];
   } else {
     reporters = ['kjhtml'];
   }
@@ -38,7 +38,6 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    //reporters: ['kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -47,43 +46,23 @@ module.exports = function (config) {
     singleRun: true,
 
     reporters: reporters,
-    // Configuración para reporte de junit
-    junitReporter: {
-      outputDir: 'reporters/test-report/', // results will be saved as $outputDir/$browserName.xml
-      outputFile: undefined // if included, results will be saved as $outputDir/$browserName/$outputFile
-    },
-
     // Configuración para reporte de cobertura
     coverageReporter: {
       includeAllSources: true,
       instrumenterOptions: {
         istanbul: { noCompact: true }
-      },
-      reporters: [
-        {
-          dir: 'reporters/coverage/',
-          subdir: '.',
-          type: 'html'
-        }, {
-          dir: 'reporters/coverage/',
-          subdir: '.',
-          type: 'cobertura'
-        }, {
-          dir: 'reporters/coverage/',
-          subdir: '.',
-          type: 'json'
-        }, {
-          dir: 'reporters/coverage/',
-          subdir: '.',
-          type: 'lcovonly',
-          file: 'coverage.lcov'
-        }
-      ]
+      }
     },
     // para evitar error en debug
     mime: {
       'text/x-typescript': ['ts', 'tsx']
-    }
+    },
+    htmlReporter: {
+      outputDir: 'reporters/test',
+      focusOnFailures: true,
+      namedFiles: false,
+      reportName: 'karma-chrome-launcher'
+    },
   };
 
   config.set(_config);

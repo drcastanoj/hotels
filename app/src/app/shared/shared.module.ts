@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { PointReplacerPipe } from './pipes/point-relacer.pipe';
+import { PointReplacerPipe } from './pipes/point-replacer.pipe';
 
 
 @NgModule({
