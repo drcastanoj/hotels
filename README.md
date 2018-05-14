@@ -25,61 +25,18 @@ yarn start-app
 ```
 go to frontend[http://0.0.0.0:5000](http://0.0.0.0:5000) or [http://localhost:5000](http://localhost:5000) in your browser
 
-```
 go to backend [http://0.0.0.0:5000](http://0.0.0.0:5000) or [http://localhost:5000](http://localhost:5000) in your browser
 
-# Getting Started
-## Dependencies
-What you need to run this app:
-* Ensure you're running the latest versions Node `v6.x.x`+ (or `v7.x.x`) and NPM `3.x.x`+
-
-## Installing and  Running the app
-* `yarn` to install all dependencies
-* `yarn start` to start the dev server bacckend
-* `yarn start-app` to start the dev server front end
-After you have installed all dependencies you can now run the app.  Open browser in `http://localhost:5000` 
 
 
-### server backend
-```bash
-# development
-yarn start
-# production generate build backend and front 
-yarn build
-#  generate build backend and frontend, and  up server node
-yarn serve-server
-```
-
-### server frontend
-```bash
-# build front-end
-yarn start-app
-# build front-end
-yarn build-app
-# build backend
-yarn build-server
-```
-
-## Other commands
-
-### generate frontend app 
-```bash
-yarn build-app
-```
-
-### generate backend app 
-```bash
-yarn build-server
-```
-
-### run unit tests and coverage on front-end 
-```bash
-yarn run test
-```
-
-### run tslint 
-```bash
-yarn lint
-```
+## Commands
+1. `yarn start` - Starts the server backend
+2. `yarn start-app` - Starts the server frontend
+3. `yarn build` - Builds backend and front application and puts the generated javascript files into /server/dist folder on backend project
+4. `yarn build-app` - Builds front application and puts the generated javascript files into /server/dist/public folder on backend project
+4. `yarn build-server` - Builds backend application and puts the generated javascript files into /server/dist folder on backend project
+5. `yarn server-node` - Build front and back project and run server on /server/dist
+6. `yarn test` - Run front test and generate reporters HTML and Coverage on /app/reporters
+7. `yarn lint` - Validates tslint rules in all project
 
 

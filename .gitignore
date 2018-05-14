@@ -4,3 +4,4 @@ server/dist
 app/public
 app/reporters
 yarn-error.log
+node_modules
