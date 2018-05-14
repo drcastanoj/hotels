@@ -12,7 +12,7 @@ git clone https://github.com/drcastanoj/hotels
 cd hotels
 
 
-# install the repo with npm
+# install the repo with yarn
 yarn 
 
 # start the server backend
