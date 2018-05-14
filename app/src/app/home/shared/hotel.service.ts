@@ -15,7 +15,7 @@ export class HotelService {
     let filterName: string = '';
     let filterStars: string = '';
     if (filter) {
-      filterName = filter.name ? `&filter[name]=${filter.name}&` : '';
+      filterName = filter.name ? `&filter[name]=${filter.name}` : '';
       filterStars = filter.stars ? `&filter[stars]=[${filter.stars}]` : '';
     }
     return this.http.get(url + filterName + filterStars);

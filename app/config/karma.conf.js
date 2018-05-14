@@ -1,6 +1,12 @@
 var webpackConfig = require('./webpack.test');
 var argv = require('yargs').argv;
+const webpack = require('webpack');
+
 module.exports = function (config) {
+
+  webpackConfig.entry = undefined;
+  webpackConfig.output = undefined;
+
 
   if (argv.test) {
     webpackConfig.module.rules.push(
@@ -10,9 +16,9 @@ module.exports = function (config) {
         exclude: [/\.spec\.ts$/, /node_modules/],
          use: { loader: 'istanbul-instrumenter-loader', options: { esModules: true } }
       });
-    reporters = ['kjhtml', 'html'];
+    reporters = ['kjhtml', 'progress', 'html', 'coverage-istanbul'];
   } else {
-    reporters = ['kjhtml'];
+    reporters = ['kjhtml', 'progress'];
   }
   const coverage = config.singleRun ? ['coverage'] : [];
   var _config = {
@@ -63,6 +69,11 @@ module.exports = function (config) {
       namedFiles: false,
       reportName: 'karma-chrome-launcher'
     },
+    coverageIstanbulReporter: {
+      reports: [ 'text-summary', 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true,
+      dir: 'reporters/coverage'
+  },
   };
 
   config.set(_config);

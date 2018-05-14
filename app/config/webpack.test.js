@@ -3,6 +3,7 @@ var helpers = require('./helpers');
 var path = require('path');
 var tslint = require('../tslint.json');
 var directorio = path.join(__dirname, '../');
+const config = require('./environments/.env.test.js');
 module.exports = {
   devtool: 'inline-source-map',
 
@@ -77,6 +78,9 @@ module.exports = {
       /angular(\\|\/)core(\\|\/)@angular/,
       path.resolve(__dirname, './src'),// location of your src
       {} // a map of your routes
-    )
+    ),
+    new webpack.DefinePlugin({
+      'process.env': config
+    }),
   ]
 }

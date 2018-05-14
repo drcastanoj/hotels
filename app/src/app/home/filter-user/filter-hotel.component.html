@@ -1,10 +1,10 @@
 <form name="hotelForm">
-  <div class="filter-mobile d-md-none" (click)="toggle.filters = !toggle.filters" >
+  <div class="filter-mobile d-md-none" (click)="toggle.filters = !toggle.filters">
     <div>
-        Filtrar
-        <span [ngClass]="{ 'arrow-up': toggle.filters, 'arrow-down': !toggle.filters } "></span>
+      Filtrar
+      <span [ngClass]="{ 'arrow-up': toggle.filters, 'arrow-down': !toggle.filters } "></span>
     </div>
-   
+
   </div>
 
   <div class="filter-desktop d-none d-md-block">
@@ -26,13 +26,14 @@
 
   <div class="filter-stars" *ngIf="toggle.filters">
     <div (click)="toggle.stars = !toggle.stars ">
-      <i class="icon-search"></i>
+      <i class="icon-star"></i>
       <span class="title-name"> Estrellas </span>
       <span [ngClass]="{ 'arrow-up': toggle.stars, 'arrow-down': !toggle.stars } "></span>
     </div>
     <div *ngIf="toggle.stars" class="stars">
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="allStars">
+        <input type="checkbox" [(ngModel)]="allStars" name="allStars" class="custom-control-input" (ngModelChange)="allStarsSelected()"
+          id="allStars">
         <label class="custom-control-label" for="allStars">Todas las estrellas</label>
       </div>
       <div class="custom-control custom-checkbox">

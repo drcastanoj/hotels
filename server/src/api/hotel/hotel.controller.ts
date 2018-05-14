@@ -32,22 +32,16 @@ export class HotelController {
         }
         return res.json(hotels);
     }
-}
 
-export let controller = {
-    get: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ ok: true });
-    },
-    getById: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ ok: true });
-    },
-    post: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ ok: true });
-    },
-    put: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ ok: true });
-    },
-    delete: (req: Request, res: Response, next: NextFunction) => {
-        res.json({ ok: true });
-    },
-};
+    public post(req: Request, res: Response, next: NextFunction) {
+
+    }
+
+    public put(req: Request, res: Response, next: NextFunction) {
+
+    }
+
+    public delete(req: Request, res: Response, next: NextFunction) {
+
+    }
+}
