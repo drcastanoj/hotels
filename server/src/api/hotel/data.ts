@@ -1399,4 +1399,4 @@ export const hotels = [
       "children-club"
     ]
   }
-]
+];

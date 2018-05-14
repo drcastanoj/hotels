@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import { hotelRouter } from './hotel/hotel.router';
+import { Router } from "express";
+import { hotelRouter } from "./hotel/hotel.router";
 
-let router = Router();
-router.use('/hotel', hotelRouter);
+const router = Router();
+router.use("/hotel", hotelRouter);
 
 export let apiRouter = router;
 

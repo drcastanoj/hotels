@@ -1,7 +1,7 @@
 export const ENV = {
-    dev: 'development',
-    prod: 'production',
-    test: 'testing'
+    dev: "development",
+    prod: "production",
+    test: "testing"
 };
 
 let config = {

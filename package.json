@@ -15,7 +15,8 @@
     "build-server": "cd server && yarn build",
     "server-node": "yarn build-app && yarn start-server-node",
     "start-server-node": "cd server && yarn serve",
-    "test": "cd app && yarn test"
+    "test": "cd app && yarn test",
+    "lint": "cd server && yarn lint && cd ../app &&  yarn lint " 
   },
   "devDependencies": {
     "istanbul": "^0.4.5"

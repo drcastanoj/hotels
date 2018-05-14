@@ -8,7 +8,9 @@
     "test": "karma start --test",
     "test:d": "karma start --no-single-run ",
     "build": "webpack --config config/webpack.prod.js  --progress --profile --bail",
-    "build:d": "webpack --config config/webpack.prod.js -d --progress --profile --bail"
+    "build:d": "webpack --config config/webpack.prod.js -d --progress --profile --bail",
+    "lint": "tslint \"src/**/*.ts\""
+
   },
   "keywords": [
     "Almundo",

@@ -1,10 +1,10 @@
-import { Router } from 'express';
-import { HotelController } from './hotel.controller';
+import { Router } from "express";
+import { HotelController } from "./hotel.controller";
 
-let controller = new HotelController();
-let router = Router();
+const controller = new HotelController();
+const router = Router();
 
-router.route('/')
+router.route("/")
     .get(controller.getHotels);
 
 export let hotelRouter = router;
